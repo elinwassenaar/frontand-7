@@ -10,7 +10,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: auto 1fr auto;
-    /* fr en vh combineren lijkt niet echt te werken om iets full-screen te krijgen */
     grid-template-areas:
         "header header header"
         "sidebar-left main-content sidebar-right"
@@ -62,7 +61,7 @@ body {
     background: lightgrey;
     padding: 2rem;
     display: grid;
-    grid-template-columns: 1fr 80% 1fr;
+    grid-template-columns: 1fr 80% 1fr; /*Waarom is plaatje dan zo klein?*/
     grid-template-rows: auto 1fr;
     grid-template-areas:
         ". title ."
@@ -95,7 +94,7 @@ img {
 .main-content {
     background: lightgoldenrodyellow;
     grid-area: main-content;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .footer {
