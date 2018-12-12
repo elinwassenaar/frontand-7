@@ -63,7 +63,7 @@ body {
     padding: 2rem;
     display: grid;
     grid-template-columns: 1fr 80% 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
         ". title ."
         ". img ."
@@ -101,5 +101,8 @@ img {
 .footer {
     background: lightseagreen;
     grid-area: footer;
-    padding: 1rem;
+    padding: 0.5rem;
+    color: white;
+    display: grid;
+    justify-items: center;
 }
