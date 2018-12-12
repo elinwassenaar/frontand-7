@@ -31,7 +31,12 @@ body {
 
 .nav-title {
     color: white;
+    align-self: center;
 }
+
+    .nav-title h1 {
+        font-size: 24px;
+    }
 
 .nav-list {
     grid-area: nav-list;
@@ -39,14 +44,18 @@ body {
 
     .nav-list ul {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(5, 1fr);
             list-style-type: none;
-            justify-content: space-around;
+            justify-items: center;
+            margin-right: 0.8rem;
     }
+    /*Nog een iets te grote uitdaging om te zorgen dat ruimte tussen de woorden gelijk is*/
+    
 
     .nav-list a {
         text-decoration: none;
         color: white;
+        font-weight: bold;
     }
 
 .sidebar {
