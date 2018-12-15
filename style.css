@@ -46,14 +46,14 @@ body {
 
     .nav-list ul {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            /* wat als ik 6e menu-item heb? */
+            grid-auto-flow: column;
+            grid-auto-columns: auto;
+            grid-template-rows: auto;
+            grid-gap: 1rem;
             list-style-type: none;
             justify-items: center;
             margin-right: 0.8rem;
     }
-    /*Nog een iets te grote uitdaging om te zorgen dat ruimte tussen de woorden gelijk is*/
-    /* flexbox */
 
     .nav-list a {
         text-decoration: none;
@@ -63,15 +63,8 @@ body {
 
 .sidebar {
     background: lightgrey;
-    /* padding: 2rem; */
     display: grid;
-    grid-template-columns: 1fr 8fr 1fr; /*Waarom is plaatje dan zo klein?*/
-    /* figure heeft margin van zichzelf. en je gebruikt zowel padding als columns op 
-    je sidebar grid */
-    /* (Dus je hebt 32px * 2 padding, daarbinnen 80% van een grid, waarbinnen een 
-    figure met 2*40px marge; dat komt met een kolom van 200px neer op 136px na padding,
-     dan 80% daarvan: 108,8, en dan -80px figure magin voor 28,8px aan ruimte voor het 
-     plaatje. Inspector is hier heel fijn voor) */
+    grid-template-columns: 1fr 8fr 1fr; 
     grid-template-rows: auto 1fr;
     grid-template-areas:
         ". title ."
@@ -97,6 +90,11 @@ body {
 
 img {
     max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+figure {
     padding: 0;
     margin: 0;
 }
