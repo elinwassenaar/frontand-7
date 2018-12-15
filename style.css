@@ -6,10 +6,12 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: auto 1fr auto;
+    /* met % oplossen 
+    met % kijkt ie altijd naar de parent, dus dan ook html 100%*/
     grid-template-areas:
         "header header header"
         "sidebar-left main-content sidebar-right"
@@ -22,6 +24,7 @@ body {
     grid-area: header;
     display: grid;
     grid-template-columns: auto 1fr auto;
+    /* Kan ook in 2 kolommen waarschijnlijk, list is zelf weer grid */
     grid-template-rows: 5vh;
     grid-template-areas:
         "title . nav-list";
@@ -34,7 +37,7 @@ body {
 }
 
     .nav-title h1 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
 .nav-list {
@@ -44,12 +47,13 @@ body {
     .nav-list ul {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
+            /* wat als ik 6e menu-item heb? */
             list-style-type: none;
             justify-items: center;
             margin-right: 0.8rem;
     }
     /*Nog een iets te grote uitdaging om te zorgen dat ruimte tussen de woorden gelijk is*/
-    
+    /* flexbox */
 
     .nav-list a {
         text-decoration: none;
@@ -59,9 +63,15 @@ body {
 
 .sidebar {
     background: lightgrey;
-    padding: 2rem;
+    /* padding: 2rem; */
     display: grid;
-    grid-template-columns: 1fr 80% 1fr; /*Waarom is plaatje dan zo klein?*/
+    grid-template-columns: 1fr 8fr 1fr; /*Waarom is plaatje dan zo klein?*/
+    /* figure heeft margin van zichzelf. en je gebruikt zowel padding als columns op 
+    je sidebar grid */
+    /* (Dus je hebt 32px * 2 padding, daarbinnen 80% van een grid, waarbinnen een 
+    figure met 2*40px marge; dat komt met een kolom van 200px neer op 136px na padding,
+     dan 80% daarvan: 108,8, en dan -80px figure magin voor 28,8px aan ruimte voor het 
+     plaatje. Inspector is hier heel fijn voor) */
     grid-template-rows: auto 1fr;
     grid-template-areas:
         ". title ."
@@ -77,7 +87,7 @@ body {
 }
 
 .sidebar h2 {
-    font-size: 16px;
+    font-size: 1rem;
     grid-area: title;
 }
 
@@ -103,5 +113,6 @@ img {
     padding: 0.5rem;
     color: white;
     display: grid;
+    /* is dat nodig? */
     justify-items: center;
 }
