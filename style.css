@@ -9,13 +9,15 @@ body {
     font-size: 1rem;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
+    /* minmax gebruiken voor responsiveness, min mag best in px */
     grid-template-rows: auto 1fr auto;
-    /* met % oplossen 
-    met % kijkt ie altijd naar de parent, dus dan ook html 100%*/
+    /* header en footer kunnen ook fixed hoogte hebben, obv rem en auto */
+    /* met % oplossen. Iets heeft altijd breedte maar geen hoogte. 
+    Met % kijkt ie altijd naar de parent, dus dan ook html 100%*/
     grid-template-areas:
-        "header header header"
-        "sidebar-left main-content sidebar-right"
-        "sidebar-left footer footer";
+        "header         header          header"
+        "sidebar-left   main-content    sidebar-right"
+        "sidebar-left   footer          footer";
 }
 
 .navbar {
@@ -48,11 +50,13 @@ body {
             display: grid;
             grid-auto-flow: column;
             grid-auto-columns: auto;
-            grid-template-rows: auto;
+            grid-auto-rows: auto;
             grid-gap: 1rem;
             list-style-type: none;
             justify-items: center;
             margin-right: 0.8rem;
+        /* met flexbox en flex-wrap is handiger voor responsiveness, 
+        dan wel margin op de items */
     }
 
     .nav-list a {
@@ -111,6 +115,6 @@ figure {
     padding: 0.5rem;
     color: white;
     display: grid;
-    /* is dat nodig? */
+    /* kan ook met flex, meer controle voor toekomst*/
     justify-items: center;
 }
